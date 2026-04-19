@@ -9,7 +9,8 @@
       "Read(//c/Users/luvmagi/AppData/Local/Programs//**)",
       "Bash($UV *)",
       "Bash($UV sync *)",
-      "Bash($UV run *)"
+      "Bash($UV run *)",
+      "Bash(uv run *)"
     ]
   }
 }

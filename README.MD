@@ -35,7 +35,8 @@ pip install -e .
 ```python
 from pathlib import Path
 import logging
-from textual_toolkit import register_tool, tool_method, run_tui
+from decotextual import register_tool, tool_method, run_tui
+
 
 # 1. 在类上添加装饰器，定义类别和工具名称
 @register_tool(category="文件处理", tool_name="文件工具箱")
@@ -54,21 +55,21 @@ class FileTool:
         """你的业务逻辑"""
         logging.info(f"开始读取文件: {file_path}")
         print(f"读取 {file_path} 前 {line_count} 行...")
-        
+
         # ... 你的代码 ...
         return "读取完成！"
-    
+
     @tool_method(
         name="批量重命名",
         description="对目录下的文件进行批量重命名",
         placeholders={"directory": "目标文件夹路径"}
     )
     def batch_rename(self, directory: Path, prefix: str):
-        pass   # 你的实现
+        pass  # 你的实现
 
 
 if __name__ == "__main__":
-    run_tui()   # 启动 TUI 界面
+    run_tui()  # 启动 TUI 界面
 ```
 
 ## 装饰器说明
