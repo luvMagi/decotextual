@@ -196,14 +196,14 @@ Screen { layout: vertical; }
     # Tree selection
     # ------------------------------------------------------------------
 
-    def on_tree_node_selected(self, event: Tree.NodeSelected) -> None:
+    async def on_tree_node_selected(self, event: Tree.NodeSelected) -> None:
         node = event.node
         if not isinstance(node.data, MethodData):
             return
 
         method_data: MethodData = node.data
         self._current_method_data = method_data
-        self._build_form(method_data)
+        await self._build_form(method_data)
 
         self.query_one("#method-header", Static).update(method_data.meta["name"])
         self.query_one("#method-desc", Static).update(method_data.meta.get("description", ""))
@@ -214,10 +214,9 @@ Screen { layout: vertical; }
     # Form building
     # ------------------------------------------------------------------
 
-    def _build_form(self, method_data: MethodData) -> None:
+    async def _build_form(self, method_data: MethodData) -> None:
         form_area = self.query_one("#form-area", VerticalScroll)
-        for widget in list(form_area.query("*")):
-            widget.remove()
+        await form_area.remove_children()
 
         self._form_params = []
 
