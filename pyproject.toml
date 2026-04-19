@@ -1,5 +1,5 @@
 [project]
-name = "textual-toolkit"
+name = "decotextual"
 version = "0.1.0"
 description = "A lightweight Textual TUI decorator library"
 requires-python = ">=3.10"
