@@ -110,11 +110,12 @@ Screen { layout: vertical; }
 
 #button-bar {
     height: 3;
-    align: center middle;
+    align: left middle;
+    padding: 0 1;
     border-top: solid $surface-darken-1;
 }
-#run-btn { margin-right: 1; min-width: 10; }
-#stop-btn { min-width: 10; }
+#run-btn { margin-right: 1; min-width: 10; content-align: center middle; }
+#stop-btn { min-width: 10; content-align: center middle; }
 
 #log-panel { height: 1fr; min-height: 8; layout: vertical; }
 
@@ -124,7 +125,7 @@ Screen { layout: vertical; }
     padding: 0 1;
     background: $boost;
 }
-#copy-log-btn { min-width: 20; }
+#copy-log-btn { min-width: 20; content-align: center middle; }
 
 #log { height: 1fr; }
 """
